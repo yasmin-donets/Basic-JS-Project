@@ -10,3 +10,13 @@ function getElementSelected(selection) {
     );
   }
 }
+
+// Creating constructor function
+
+function Gallery(element) {
+	console.log(element);
+}
+
+const nature = new Gallery(getElementSelected('.nature'));
+const city = new Gallery(getElementSelected('.city'));
+
