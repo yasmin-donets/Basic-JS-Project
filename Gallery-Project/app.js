@@ -19,22 +19,42 @@ function Gallery(element) {
   // target module by selecting all elements
   this.modal = getElementSelected('.modal');
   this.modalImage = getElementSelected('.main-img');
+  this.imageName = getElementSelected('.image-name');
   this.modalImages = getElementSelected('.modal-images');
   this.closeBtn = getElementSelected('.close-btn');
   this.nextBtn = getElementSelected('.next-btn');
   this.prevBtn = getElementSelected('.prev-btn');
   // bind functions
   //this.openModal = this.openModal.bind(this);
-	//container event
-  this.container.addEventListener('click', function (e) {
-    this.openModal();
-  }.bind(this));
+  //container event
+  this.container.addEventListener(
+    'click',
+    function (e) {
+      // self.openModal();
+      if (e.target.classList.contains('img')) {
+        this.openModal(e.target, this.list);
+      }
+    }.bind(this)
+  );
 }
 
-Gallery.prototype.openModal = function () {
-  console.log(this);
-  //console.log('open modal');
+Gallery.prototype.openModal = function (selectedImage, list) {
+  //console.log(this);
+  this.setMainImage(selectedImage);
+	//displaying list of foto in open modal
+  this.modalImages.innerHTML = list
+    .map(function (image) {
+      return `<img src="${
+        image.src
+      }" title="${image.title}" data-id="${image.dataset.id}" class="${selectedImage.dataset.id === image.dataset.id ? 'modal-img selected' : 'modal-img'}"/>`;
+    })
+    .join('');
   this.modal.classList.add('open');
+};
+
+Gallery.prototype.setMainImage = function (selectedImage) {
+  this.modalImage.src = selectedImage.src;
+  this.imageName.textContent = selectedImage.title;
 };
 
 const nature = new Gallery(getElementSelected('.nature'));
