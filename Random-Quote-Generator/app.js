@@ -8,11 +8,14 @@ const URL = 'https://api.quotable.io/random';
 
 // add Event Listener
 
-btnElement.addEventListener('click', () => {
-  fetch(URL)
-    .then((data) => data.json())
-    .then((response) => displayData(response))
-    .catch((err) => console.log(err));
+btnElement.addEventListener('click', async () => {
+  try {
+    const data = await fetch(URL);
+    const response = await data.json();
+    displayData(response);
+  } catch (error) {
+		console.log(error);
+	}
 });
 
 function displayData({ content: quote, author: quoteAuthor }) {
