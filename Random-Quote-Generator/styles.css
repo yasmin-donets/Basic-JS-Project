@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+	background-image: url("./utils/pawel-czerwinski-VXUhQqO8u5Q-unsplash.jpg");
+	object-fit: cover;
+}
+.container {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+.quote__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 605px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+  padding: 30px 30px 25px;
+}
+.quote__text {
+  display: flex;
+  justify-content: center;
+}
+.quote__text i:first-child {
+  margin: 3px 10px 0 0;
+}
+.quote__text i:last-child {
+  display: flex;
+  align-items: end;
+  margin: 0 0 3px 10px;
+}
+
+.quote {
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+i {
+  font-size: 15px;
+}
+.quote__author {
+  display: flex;
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 5px;
+  justify-content: flex-end;
+}
+
+.author {
+}
+.btn__container {
+  display: flex;
+  justify-content: space-between;
+}
+button {
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  font-style: 16px;
+  padding: 13px 22px;
+  border-radius: 30px;
+  background: #537;
+}
+.feature {
+  margin: 0 5px;
+  height: 47px;
+  width: 47px;
+  display: flex;
+  cursor: pointer;
+  color: #537;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #537;
+  transition: all 0.3s ease;
+}
+.feature:hover {
+  color: #fff;
+  background: #537;
+}
