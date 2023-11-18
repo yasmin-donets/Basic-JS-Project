@@ -8,3 +8,7 @@ const userTitle = get('.user-title');
 const userValue = get('.user-value');
 const valuesList = get('.values-list');
 
+// adding event listeners
+window.addEventListener('DOMContentLoaded', showUser);
+btn.addEventListener('click', showUser);
+const showUser = () => {};
