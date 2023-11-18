@@ -12,7 +12,7 @@ const displayUser = (person) => {
   userTitle.textContent = `My name is`;
   // remove and add class active
   removeActive(btns);
-  btns[0].classList.remove('active');
+  btns[0].classList.add('active');
   btns.forEach((btn) => {
     const label = btn.dataset.label;
     btn.addEventListener('click', () => {
