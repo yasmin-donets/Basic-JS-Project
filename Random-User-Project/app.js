@@ -33,7 +33,15 @@ const getUser = async () => {
   const {
     street: { number, name },
   } = person.location;
-	console.log(number, name);
+  return {
+    image,
+    phone,
+    email,
+    password,
+    age,
+    street: `${number} ${name}`,
+    name: `${first} ${last}`,
+  };
 };
 
 // adding event listeners
