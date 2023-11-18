@@ -12,16 +12,30 @@ const URL = 'https://randomuser.me/api/';
 
 //main
 const showUser = () => {
-getUser();
+  getUser();
 };
 
-const getUser = async ()=>{
-const response = await fetch(URL);
-const data = await response.json();
-console.log(data);
-}
+const getUser = async () => {
+  const response = await fetch(URL);
+  const data = await response.json();
+
+  //destructure
+  const person = data.results[0];
+  const { email, phone } = person;
+  const { large: image } = person.picture;
+  const { last, first } = person.name;
+  const {
+    login: { password },
+  } = person;
+  const {
+    dob: { age },
+  } = person;
+  const {
+    street: { number, name },
+  } = person.location;
+	console.log(number, name);
+};
 
 // adding event listeners
 window.addEventListener('DOMContentLoaded', showUser);
 btnEl.addEventListener('click', showUser);
-
