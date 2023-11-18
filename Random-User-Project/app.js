@@ -8,7 +8,20 @@ const userTitle = get('.user-title');
 const userValue = get('.user-value');
 const valuesList = get('.values-list');
 
+const URL = 'https://randomuser.me/api/';
+
+//main
+const showUser = () => {
+getUser();
+};
+
+const getUser = async ()=>{
+const response = await fetch(URL);
+const data = await response.json();
+console.log(data);
+}
+
 // adding event listeners
 window.addEventListener('DOMContentLoaded', showUser);
-btn.addEventListener('click', showUser);
-const showUser = () => {};
+btnEl.addEventListener('click', showUser);
+
