@@ -1,11 +1,8 @@
 //Imports
-import fetchDrinks from './utils/fetchDrinks.js';
-import displayDrinks from './utils/displayDrinks.js';
-
+import presentDinks from './utils/presentDrinks.js';
 // URL
 const URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=b';
 
-window.addEventListener('DOMContentLoaded', async() => {
-  const data = await fetchDrinks(URL);
-  displayDrinks(data);
+window.addEventListener('DOMContentLoaded', async () => {
+  presentDinks(URL)
 });
