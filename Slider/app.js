@@ -33,3 +33,10 @@ container.innerHTML = people
         </article>`;
   })
   .join('');
+const starSlider = (type) => {};
+prevBtn.addEventListener('click', () => {
+  starSlider('prev');
+});
+nextBtn.addEventListener('click', () => {
+  starSlider();
+});
