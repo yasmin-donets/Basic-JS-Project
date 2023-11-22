@@ -7,9 +7,16 @@ const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.next-btn');
 
 container.innerHTML = people
-  .map((person) => {
+  .map((person, slideIndex) => {
+    let position = 'next';
+    if (slideIndex === 0) {
+      position = 'active';
+    }
+    if (slideIndex === people.length - 1) {
+      position = 'last';
+    }
     const { img, name, job, text } = person;
-    return `<article class="slide">
+    return `<article class="slide ${position}">
           <img
             src="${img}"
             class="img"
